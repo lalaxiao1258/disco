@@ -6,8 +6,7 @@ def get_count(url,k ,proy):
                 'channel':'GW','user-agent':'okhttp/3.14.1',
                 'appVersion':'1.0.7','Accept':'application/json',
                 'versioncode':'7'}
-        r=requests.post(url,headers=header,data='h4DTanVobu8H5znghXQnjJLBMCgx+wNbIYtieex/Nfo=',proxies=proy,timeout
-=4).text
+        r=requests.post(url,headers=header,data='h4DTanVobu8H5znghXQnjJLBMCgx+wNbIYtieex/Nfo=',proxies=proy,timeout=4).text
         #print(r)
         tk=re.findall(r'(?<="token":").+(?=","expiredIn")',r)
         return tk
@@ -92,7 +91,7 @@ def invite_log_write(invitecode):
         #print('not frist')
         line,d=find_invite(invitecode)
         re_line(line,d,invitecode)
-def mains():
+def main():
         url = 'https://discovpn.com/api/v2/trial/'
         url2 = 'https://discovpn.com/api/v2/invite/active/'
         m = 1
@@ -113,8 +112,7 @@ def mains():
                         # porxies = "http://" + porx.strip("\n")
                         proy = {'http': ip1, 'https': ip1}
                         #print(proy)
-                        webdata = requests.post(url='http://icanhazip.com/', proxies=proy, timeout=4).text  # 查看>
-此时代理IP
+                        webdata = requests.post(url='http://icanhazip.com/', proxies=proy, timeout=4).text  # 查看>此时代理IP
                         #print(webdata)
                         time.sleep(2)
                         k = str(random.randint(10000000, 99999999))
@@ -140,11 +138,6 @@ def mains():
                 except:
                     None
         #print('邀请结束\n成功：' + str(n) + '次!\n失败：' + str(b) + "次！")
-def main(action):
-  if 'start' in action :
-        mains()
-        return True
-    else:return False
 if __name__ == "__main__":
-    mains()
+    main()
 
