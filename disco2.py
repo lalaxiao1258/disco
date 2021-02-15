@@ -129,8 +129,7 @@ def main():
                                 #log.close()
                                 m=m+1
                         else:
-                                log = open('/home/ouyangshazhu/ok_ip_proxy_pool/history_log/'+invitecode+'.txt','a'
-)
+                                log = open('/home/ouyangshazhu/ok_ip_proxy_pool/history_log/'+invitecode+'.txt','a')
                                 b = 1
                                 print(invitecode+'-' +'邀请失败1次！')
                                 log.write('-' * 20 + '邀请失败' + str(n) + '次！' + '-' * 20 + '\n')
